@@ -1,0 +1,9 @@
+#pragma once
+#define SCREEN_WIDTH 720
+#define SCREEN_HEIGHT 576
+#define WINDOW_TITLE "DVD no are"
+
+#define DVD_LOGO_WIDTH 160
+#define DVD_LOGO_HEIGHT DVD_LOGO_WIDTH * 0.44140625
+
+
