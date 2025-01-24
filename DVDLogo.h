@@ -13,10 +13,10 @@ public:
 
 private:
 
-	int x;
-	int y;
-	int x_speed = 1;
-	int y_speed = 1;
+	float x;
+	float y;
+	float x_speed = 1.5;
+	float y_speed = 1.5;
 	int is_collision = 0;
 	int color;
 

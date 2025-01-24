@@ -10,6 +10,14 @@ DVDLogo::DVDLogo() {
 	x = GetRand(SCREEN_WIDTH - DVD_LOGO_WIDTH);
 	y = GetRand(SCREEN_HEIGHT - DVD_LOGO_HEIGHT);
 	color = GetColorByHSV((float)GetRand(360), 0.8, 1.0);
+
+	if (GetRand(1)) {
+		x_speed *= -1;
+	}
+	if (GetRand(1)) {
+		y_speed *= -1;
+	}
+
 }
 
 DVDLogo::~DVDLogo() {

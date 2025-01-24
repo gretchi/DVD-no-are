@@ -3,6 +3,7 @@
 #include "DVDLogo.h"
 #include <time.h>
 
+#define MAX_DVD_NUM 15
 
 void Loop();
 void Load();
@@ -11,7 +12,7 @@ void Init();
 
 int raw_dvd_logo_image_handle = 0;
 
-DVDLogo *dvd_logo = new DVDLogo();
+DVDLogo* dvd_logo[MAX_DVD_NUM];
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
@@ -31,6 +32,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	Load();
 
+	for (int i = 0; i < MAX_DVD_NUM; i++) {
+		dvd_logo[i] = new DVDLogo();
+	}
+
 	while (1) {
 		ClearDrawScreen();
 
@@ -46,7 +51,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	//WaitKey();
 
-	delete(dvd_logo);
+	//delete(dvd_logo);
 
 	DxLib_End();
 
@@ -56,10 +61,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 void Loop() {
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 	
-		
-	dvd_logo->Move();
-	dvd_logo->Draw();
-
+	for (int i = 0; i < MAX_DVD_NUM; i++) {
+		dvd_logo[i]->Move();
+		dvd_logo[i]->Draw();
+	}
 
 
 
